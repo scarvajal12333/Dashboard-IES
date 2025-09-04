@@ -46,8 +46,9 @@ barra_vertical = option_menu(
         }
     }
 )
-df_titulados = pd.read_csv('datos/titulados.csv')
-df_matriculas = pd.read_csv('datos/matriculas.csv')
+BASE = Path(__file__).parent  # carpeta donde está main.py
+csv_titulados = BASE / "datos" / "titulados.csv"
+csv_matriculas = BASE / "datos" / "matriculas.csv"  # si tienes más
 df_seleccionado = df_matriculas.copy()
 
 
@@ -284,3 +285,4 @@ with col2:
     # --- Mostrar el Gráfico en Streamlit ---
 
     st.plotly_chart(fig_evolutivo, use_container_width=True)
+
