@@ -15,10 +15,11 @@ st.set_page_config(page_title="Dashboard Educación Superior",
 
 logo_path = Path(__file__).parent / "imagenes" / "logoCriteria.png"
 st.logo(str(logo_path), size="large")
-
+BASE = Path(__file__).parent  # carpeta donde está main.py
+ruta_css = BASE / "estilo.css"
 # --- Cargar el CSS donde se configura los detalles estéticos ---
 try:
-    with open("estilo.css") as f: 
+    with open(ruta_css) as f: 
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 except FileNotFoundError:
     st.error("Error: Archivo 'estilo.css' no encontrado. Asegúrate de que esté en la misma carpeta.")
@@ -287,5 +288,6 @@ with col2:
     # --- Mostrar el Gráfico en Streamlit ---
 
     st.plotly_chart(fig_evolutivo, use_container_width=True)
+
 
 
