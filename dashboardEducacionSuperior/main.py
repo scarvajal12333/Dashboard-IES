@@ -4,16 +4,17 @@ import streamlit as st                         # Importa Streamlit, la librería
 from streamlit_option_menu import option_menu  # Decora los menús (barras con filtros)
 import pandas as pd                            # Pandas pu, como no cachai pandas
 import plotly.express as px                    # Para hacer los gráficos
-
+from pathlib import Path
 # --- CONFIGURACIONES GENERALES DE LA APP ----
 
 st.set_page_config(page_title="Dashboard Educación Superior",
                    layout="wide",
                    initial_sidebar_state="expanded")
 
-st.logo(
-    "imagenes/logoCriteria.png",
-    size="large")
+
+
+logo_path = Path(__file__).parent / "imagenes" / "logoCriteria.png"
+st.logo(str(logo_path), size="large")
 
 # --- Cargar el CSS donde se configura los detalles estéticos ---
 try:
@@ -281,4 +282,5 @@ with col2:
 
 
     # --- Mostrar el Gráfico en Streamlit ---
+
     st.plotly_chart(fig_evolutivo, use_container_width=True)
