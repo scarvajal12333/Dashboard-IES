@@ -1,0 +1,28 @@
+/* estilo.css */
+
+.stApp {
+    padding-top: 0rem; /* Elimina o reduce el padding superior de la app */
+}
+
+.css-18e3th9 { /* Clase del contenedor principal de la página. Verifica con el inspector. */
+    padding-top: 0rem;
+}
+
+.block-container { /* Clase más fiable para el contenido principal */
+    padding-top: 0rem; /* Puedes ajustar este valor si quieres un poco de espacio */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 0rem;
+}
+
+#MainMenu {
+    visibility: hidden; /* Oculta el menú de hamburguesa de Streamlit */
+}
+
+footer {
+    visibility: hidden; /* Oculta el pie de página "Made with Streamlit" */
+}
+
+header {
+    visibility: hidden; /* Oculta la cabecera de Streamlit (donde está el botón "Deploy") */
+}
